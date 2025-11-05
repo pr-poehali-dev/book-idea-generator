@@ -431,11 +431,19 @@ export default function Index() {
                       </div>
                     </CardContent>
                     <CardFooter className="gap-2">
-                      <Button variant="outline" className="flex-1">
+                      <Button 
+                        variant="outline" 
+                        className="flex-1"
+                        onClick={() => toast.info(`Открываем книгу "${book.title}"...`)}
+                      >
                         <Icon name="Eye" size={16} className="mr-2" />
                         Читать
                       </Button>
-                      <Button variant="outline" className="flex-1">
+                      <Button 
+                        variant="outline" 
+                        className="flex-1"
+                        onClick={() => toast.success(`Экспорт книги "${book.title}" начат!`)}
+                      >
                         <Icon name="Download" size={16} className="mr-2" />
                         Экспорт
                       </Button>
