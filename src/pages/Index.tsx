@@ -278,19 +278,21 @@ export default function Index() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {Object.entries(genreData).map(([key, data]) => (
-                <Card
+                <button
                   key={key}
-                  className="cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 bg-card/80 backdrop-blur-sm"
                   onClick={() => {
                     setNewBook({ ...newBook, genre: key });
                     setCreateDialogOpen(true);
                   }}
+                  className="w-full"
                 >
-                  <CardContent className="p-6 text-center space-y-3">
-                    <Icon name={data.icon as any} size={32} className="mx-auto text-accent" />
-                    <h3 className="font-semibold">{data.name}</h3>
-                  </CardContent>
-                </Card>
+                  <Card className="cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 bg-card/80 backdrop-blur-sm h-full">
+                    <CardContent className="p-6 text-center space-y-3">
+                      <Icon name={data.icon as any} size={32} className="mx-auto text-accent" />
+                      <h3 className="font-semibold">{data.name}</h3>
+                    </CardContent>
+                  </Card>
+                </button>
               ))}
             </div>
           </TabsContent>
